@@ -1,0 +1,10 @@
+name: app-example
+title:
+username: kevincarrasco
+account: kevincarrasco
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9508505
+bundleId: 7497489
+url: https://kevincarrasco.shinyapps.io/app-example/
+version: 1
