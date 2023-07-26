@@ -3,10 +3,8 @@ library(shinydashboard)
 library(dplyr)
 library(ggplot2)
 library(sjlabelled)
-load(file = "input/datos/sf_simce.RData")
-sf_simce <- sf_simce %>% select(-geometry)
-sf_simce$prom_lect_rbd <- set_label(sf_simce$prom_lect_rbd, label = "Promedio lectura por RBD")
-sf_simce$prom_mate_rbd <- set_label(sf_simce$prom_mate_rbd, label = "Promedio matemática por RBD")
+load(file = "input/datos/proc/sf_simce.RData")
+
 
 # Define las funciones de server
 server <- function(input, output) {
@@ -20,7 +18,7 @@ server <- function(input, output) {
         theme(strip.text.x     = element_text(size   = 18, face = "bold",hjust = 0.5),
               strip.text.y     = element_text(size   = 15, family = "Lato",face   = "bold"),
               strip.background = element_rect(colour = "grey",fill   = "white"),panel.spacing= unit(2, "lines"),
-              axis.text.x  = element_text(size   = 10,family = "Lato",face = "bold"),
+              axis.text.x  = element_text(size   = 10,family = "Lato",face = "bold", angle=45, vjust=1, hjust=1),
               axis.text.y  = element_text(size   = 15,family = "Lato",face = "bold"),
               axis.title.x = element_text(size   = 18,family = "Lato",face = "bold"),
               axis.title.y = element_text(size   = 18,family = "Lato",face = "bold"),

@@ -1,6 +1,11 @@
 library(shiny)
 library(shinydashboard)
-load(file = "input/datos/sf_simce.RData")
+
+
+load(file = "input/datos/proc/sf_simce.RData")
+
+
+
 ui <- dashboardPage(
     dashboardHeader(
         title = "Pollution and educational outcomes",
@@ -28,7 +33,7 @@ ui <- dashboardPage(
             inputId = "selected_type",
             label = "Seleccionar año:",
             choices = levels(sf_simce$agno),
-            selected = "2005"
+            selected = "2015"
         )
     ),
     # Output: Show scatterplot
