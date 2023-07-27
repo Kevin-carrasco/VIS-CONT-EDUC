@@ -25,14 +25,17 @@ server <- function(input, output) {
               legend.text  = element_text(size   = 12,family = "Lato"),
               plot.title   = element_text(size   = 15,family = "Lato",face = "bold",hjust = 0.5),
               plot.caption = element_text(size   = 12,family = "Lato",hjust = 0,face = "plain"))+
-        ylim(c(100,400))
+        ylim(c(100,400))+
+        facet_wrap(~get(input$z), ncol=2)
     })
     # crea una tabla resumen
     simce_subset <- reactive({
         # viene del UI
         req(input$selected_type)
+        req(input$f)
         # filtra base de datos
-        filter(sf_simce, agno %in% input$selected_type)
+        sf_simce %>% filter(agno %in% input$selected_type) %>% 
+          filter(grado %in% input$f)
     }) #termina data reactivo
     output$n <- renderUI({
         HTML(paste0("El gráfico muestra la relación entre ", input$x, " y ",  input$y,

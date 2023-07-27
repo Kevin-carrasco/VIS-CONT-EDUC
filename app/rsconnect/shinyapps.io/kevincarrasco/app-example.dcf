@@ -5,6 +5,6 @@ account: kevincarrasco
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9508505
-bundleId: 7500166
+bundleId: 7501447
 url: https://kevincarrasco.shinyapps.io/app-example/
 version: 1
